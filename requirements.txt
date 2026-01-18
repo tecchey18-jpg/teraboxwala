@@ -1,0 +1,11 @@
+aiogram==3.4.1
+aiohttp==3.9.3
+aiofiles==23.2.1
+python-dotenv==1.0.1
+fake-useragent==1.4.0
+certifi==2024.2.2
+yarl==1.9.4
+regex==2023.12.25
+orjson==3.9.15
+tenacity==8.2.3
+cryptography==42.0.5
