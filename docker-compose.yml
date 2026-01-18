@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  terabox-bot:
+    build: .
+    container_name: terabox-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - MAX_RETRIES=${MAX_RETRIES:-3}
+      - REQUEST_TIMEOUT=${REQUEST_TIMEOUT:-30}
+      - COOKIE_REFRESH_INTERVAL=${COOKIE_REFRESH_INTERVAL:-3600}
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - terabox-network
+
+networks:
+  terabox-network:
+    driver: bridge
